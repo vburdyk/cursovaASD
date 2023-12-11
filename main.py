@@ -5,10 +5,10 @@ class DynamicArray:
 
     def __init__(self, capacity=10):
         """
-        Initializes a new dynamic array.
+        Ініціалізація нового динамічного масиву
 
-        Parameters:
-        - capacity (int): Initial size of the array (default is 10).
+        Параметри:
+        - capacity (int): Ініціалізує розмір масиву.
         """
         self._capacity = capacity  # Initial array size
         self._size = 0  # Current array size
@@ -16,16 +16,16 @@ class DynamicArray:
 
     def __getitem__(self, index):
         """
-        Returns the element at the specified index.
+        Повертає елемент за специфічним індексом.
 
-        Parameters:
-        - index (int): Index of the element to retrieve.
+        Параметри:
+        - index (int): Індекс елемента для отримання.
 
-        Returns:
-        - int: Element of the array at the specified index.
+        Повертає:
+        - int: Елемент масиву за специфічним індексом.
 
-        Raises:
-        - IndexError: If the index is out of range.
+        Спричиняє:
+        - IndexError: Якщо індекс поза межами масиву.
         """
         if 0 <= index < self._size:
             return self._array[index]
@@ -33,14 +33,14 @@ class DynamicArray:
 
     def __setitem__(self, index, value):
         """
-        Sets the value of the element at the specified index.
+        Встановлює значення елемента за вказаним індексом.
 
-        Parameters:
-        - index (int): Index of the element to change.
-        - value (int): New value for the element.
+        Параметри:
+        - index (int): Індекс елемента, який потрібно змінити.
+        - value (int): Нове значення для елемента.
 
-        Raises:
-        - IndexError: If the index is out of range.
+        Спричиняє:
+        - IndexError: Якщо індекс поза межами масиву.
         """
         if 0 <= index < self._size:
             self._array[index] = value
@@ -49,14 +49,14 @@ class DynamicArray:
 
     def insert(self, index, value):
         """
-        Inserts a new element at a specific position in the array.
+        Вставляє новий елемент у певну позицію в масиві.
 
-        Parameters:
-        - index (int): Position for inserting the new element.
-        - value (int): New value for the element.
+        Параметри:
+        - index (int): Позиція для вставки нового елемента.
+        - value (int): Нове значення для елемента.
 
-        Raises:
-        - IndexError: If the index is out of range.
+        Спричиняє:
+        - IndexError: Якщо індекс поза межами масиву.
         """
         if self._size == self._capacity:
             self._resize()
@@ -71,13 +71,13 @@ class DynamicArray:
 
     def delete(self, index):
         """
-        Deletes the element at the specified index from the array.
+        Видаляє елемент із вказаним індексом із масиву.
 
-        Parameters:
-        - index (int): Index of the element to delete.
+        Параметри:
+        - index (int): Індекс елемента для видалення.
 
-        Raises:
-        - IndexError: If the index is out of range.
+        Спричиняє:
+        - IndexError: Якщо індекс поза межами масиву.
         """
         if 0 <= index < self._size:
             for i in range(index, self._size - 1):
@@ -89,7 +89,7 @@ class DynamicArray:
 
     def _resize(self):
         """
-        Increases the array size by doubling it.
+        Збільшує розмір масиву, подвоюючи його.
         """
         self._capacity *= 2
         new_array = [None] * self._capacity
@@ -99,16 +99,16 @@ class DynamicArray:
 
     def size(self):
         """
-        Returns the current size of the array.
+        Повертає поточний розмір масиву.
 
-        Returns:
-        - int: Current size of the array.
+        Повертає:
+        - int: Поточний розмір масиву.
         """
         return self._size
 
     def display(self):
         """
-        Displays the current elements in the array.
+        Відображає поточні елементи в масиві.
         """
         print("Поточні елементи масиву:")
         for i in range(self._size):
@@ -214,11 +214,11 @@ options = {
 
 def display_menu():
     print("Меню динамічного масиву")
-    print("1. Вставити елемент")#
-    print("2. Показати елементи масиву")#
-    print("3. Отримати елемент за індексом")#
-    print("4. Замінити елемент за індексом")#
-    print("5. Видалити елемент")#
+    print("1. Вставити елемент")
+    print("2. Показати елементи масиву")
+    print("3. Отримати елемент за індексом")
+    print("4. Замінити елемент за індексом")
+    print("5. Видалити елемент")
     print("6. Отримати поточний розмір масиву")
     print("7. Вийти")
     choice = input("Введіть ваш вибір: ")
